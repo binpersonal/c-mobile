@@ -163,6 +163,20 @@ export default {
         }
       });
     },
+  //   scrollTo(i, e) {
+  //     if (this.move) {
+  //       return;
+  //     }
+  //     this.index = i;
+  //     // 移动到中间
+  //     //  1. 父级元素的宽度 - 当前选中元素的宽度（左边距-宽度/2);
+  //     const { oneTab } = this.$refs;
+  //     const itemWidth = e.target.offsetWidth;
+  //     const itemLeft = e.target.offsetLeft;
+  //     const wrapperWidth = oneTab.offsetWidth;
+  //     console.log(itemWidth, oneTab, wrapperWidth, itemLeft);
+  //     oneTab.scrollLeft = itemWidth / 2 + itemLeft - wrapperWidth / 2;
+  //   },
   },
 };
 </script>
