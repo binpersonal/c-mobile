@@ -23,7 +23,33 @@ export default {
 
   },
   methods: {
-
+    scrollTo(i, e) {
+      if (this.move) {
+        return;
+      }
+      this.index = i;
+      const { side } = this.$refs;
+      const sonTop = e.target.getBoundingClientRect().top;
+      const sonHeight = e.target.offsetHeight;
+      const pTop = side.getBoundingClientRect().top;
+      const pHeight = side.offsetHeight;
+      this.moveTo(side.scrollTop, sonTop + sonHeight / 2 - pTop - pHeight / 2); // 让选中的icon居中
+    },
+    moveTo(start, end) {
+      let dis = 0;
+      let speed = 5;
+      if (end < 0) {
+        speed *= -1;
+      }
+      const t = setInterval(() => {
+        dis += speed;
+        this.$refs.side.scrollTop = start + dis;
+        if (Math.abs(dis) > Math.abs(end)) {
+          this.$refs.side.scrollTop = start + end;
+          clearInterval(t);
+        }
+      });
+    },
   },
   mounted() {
 
