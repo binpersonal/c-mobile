@@ -6,19 +6,23 @@
     </div>
     <one-tab></one-tab>
     <template v-if="true">
-      <side-bar></side-bar>
+      <side-bar />
+      <goods-list />
     </template>
+<!--    <van-loading size="2rem" vertical />-->
   </div>
 </template>
 
 <script>
 import oneTab from '../components/OneTab.vue';
 import sideBar from '../components/SideBar.vue';
+import goodsList from '../components/GoodsList.vue';
 
 export default {
   components: {
     oneTab,
     sideBar,
+    goodsList,
   },
   data() {
     return {};
